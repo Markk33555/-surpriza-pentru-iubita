@@ -2,28 +2,76 @@ const button = document.getElementById("startButton");
 
 button.addEventListener("click", () => {
 
-    document.querySelector(".hero").innerHTML = `
+document.body.style.overflow = "auto";
 
-    <h1>❤️ Mulțumesc ❤️</h1>
+document.querySelector(".container").innerHTML = `
 
-    <p style="margin-top:30px;font-size:22px;line-height:1.8">
+<h1 style="margin-bottom:40px;">💌 Dragă Geanina...</h1>
 
-    Nu am făcut acest site pentru că este o zi specială.
+<div id="letter" style="
+font-size:22px;
+line-height:2;
+text-align:left;
+max-width:700px;
+margin:auto;
+white-space:pre-line;
+"></div>
 
-    L-am făcut pentru că tu ești o persoană specială.
+`;
 
-    Îți mulțumesc pentru fiecare zâmbet.
+const text = `
 
-    Îți mulțumesc pentru fiecare îmbrățișare.
+Nu am făcut acest site pentru că este o zi specială...
 
-    Îți mulțumesc că îmi ești alături.
+L-am făcut pentru că TU ești o persoană specială.
 
-    Sunt recunoscător în fiecare zi că faci parte din viața mea.
+În ultima perioadă m-am gândit cât de norocos sunt că te am în viața mea.
 
-    Te iubesc din tot sufletul. ❤️
+Poate nu îți spun suficient de des...
 
-    </p>
+Dar îți mulțumesc.
 
-    `;
+Îți mulțumesc pentru răbdarea ta.
+
+Îți mulțumesc pentru fiecare zâmbet.
+
+Îți mulțumesc pentru fiecare îmbrățișare.
+
+Îți mulțumesc pentru fiecare moment petrecut împreună.
+
+Îți mulțumesc că mă faci să mă simt iubit.
+
+Îți mulțumesc că mă faci să vreau să fiu un om mai bun.
+
+Poate nu sunt perfect...
+
+Dar un lucru este sigur.
+
+Te iubesc din tot sufletul.
+
+❤️
+
+Cu toată dragostea,
+
+Mark ❤️
+`;
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < text.length){
+
+document.getElementById("letter").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,40);
+
+}
+
+}
+
+typeWriter();
 
 });
